@@ -1,0 +1,2 @@
+from trainers.classification_trainer import ClassifcationTrainer
+# from trainers.fixmatch_trainer import FixMatchTrainer
