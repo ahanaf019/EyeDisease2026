@@ -19,7 +19,7 @@ csv_name = "db_split.csv"
 image_files = sorted(glob(f'{db_path_root}/*/*'))
 image_files = ["/".join(p.split("/")[-2:]) for p in image_files]
 
-labels = [x.split('/')[0] for x in image_files]
+labels = [x.split('/')[-2] for x in image_files]
 
 df = pd.DataFrame({'image_path': image_files, 'label': labels})
 
@@ -40,7 +40,7 @@ images_train, images_test, labels_train, labels_test, le_train, le_test = train_
 
 images_test, images_val, labels_test, labels_val, le_test, le_val = train_test_split(
     images_test, labels_test, le_test,
-    train_size=0.5,
+    train_size=0.666,
     random_state=seed,
     stratify=labels_test
 )

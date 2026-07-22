@@ -45,6 +45,30 @@ pip install -r requirements.txt
 └── visualize/                 # confusion matrix plotting
 ```
 
+## Data Split
+
+The dataset is split into train/val/test using stratified sampling to preserve class proportions across splits.
+
+```bash
+python data_split/create_db_split.py
+```
+
+This script scans `Eye_Disease_Image_Dataset/<class>/<image>` on disk, encodes class labels with `LabelEncoder`, and performs a two-stage stratified split (train_test_split from scikit-learn, seed=224):
+
+1. **70% train / 30% held-out**, stratified by class
+2. The 30% held-out portion is split again **334/666** into **val** and **test**, stratified by class
+
+giving a final ratio of **70% train / 10% val / 20% test**.
+
+Two files are produced under `data_split/` (and copied into the dataset root for portability):
+
+| File | Description |
+|---|---|
+| `db_split.csv` | One row per image: `image_path`, `label`, `labels_encoded`, `split` (`train`/`val`/`test`) |
+| `class_map.json` | Maps integer label indices back to their original class names |
+
+`datasets/` (used by `train_model.py`, `test_model.py`, etc.) reads `db_split.csv` to determine which images belong to which split, so this script should be run once before training.
+
 ## Usage
 
 ### Train
