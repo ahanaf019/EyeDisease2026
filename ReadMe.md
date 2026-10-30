@@ -2,7 +2,11 @@
 
 **Authors:** Md. Ahanaf Arif Khan, Sangeeta Biswas
 
-This paper compares six models across the CNN, Transformer, and Mamba families for automated multi-class eye disease classification from color fundus images. All experiments were performed using the Eye Disease Image Dataset
+This paper presents a comparative analysis of six models across the CNN, Transformer, and Mamba families for automated multi-class eye disease classification from color fundus images. All experiments were conducted using the Eye Disease Image Dataset (EDID).
+
+*Published in [PLOS ONE](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0360171), October 2026.*
+
+📄 **[Read the full paper](https://doi.org/10.1371/journal.pone.0360171)**
 
 ## Setup
 
@@ -139,7 +143,24 @@ python bootstrap_ci.py \
 
 ## Citation
 
-The paper is currently under review. This section will be updated with the full citation once it is published.
+Citation
+
+If you use this codebase or find our work useful in your research, please cite our paper:
+
+```bibtex
+@article{Khan2026,
+  author      = {Khan, Md. Ahanaf Arif and Biswas, Sangeeta},
+  title       = {Comparative analysis of CNN, Transformer, and Mamba-based models for automated eye disease classification from fundus images},
+  journal     = {PLOS One},
+  publisher   = {Public Library of Science (PLoS)},
+  volume      = {21},
+  number      = {10},
+  pages       = {e0360171}
+  DOI         = {10.1371/journal.pone.0360171},
+  month       = Oct,
+  year        = {2026},
+}
+```
 
 ## Contact
 
